@@ -12,20 +12,26 @@ namespace ApiWithDapper.Service
             
             _connection = connection;
         }
-
-        public async Task<IEnumerable<Mobile>> SelectAllProduct()
+        /*IEnumerable
+         
+         IEnumerable<Mobile> is more flexible and better suited for large data sets with lazy loading.
+         List<Mobile> is better when you need to have all data in memory for quick access and operations.
+         
+         
+         */
+        public async Task<IEnumerable<Mobile>> SelectAllProduct() 
         {
             var query = "SELECT * FROM Mobile";
             var result = await _connection.QueryAsync<Mobile>(query);
             return result;
         }
 
-        public async Task<IEnumerable<Mobile>> SelectAllProductSp()
+        public async Task<List<Mobile>> SelectAllProductSp()
         {
-            var query = "InsertMobile";
+            var query = "[dbo].[SelectAllMobile]";
             var result = await _connection.QueryAsync<Mobile>(query,commandType:CommandType.StoredProcedure);
 
-            return result;
+            return result.ToList();
         }
 
 
