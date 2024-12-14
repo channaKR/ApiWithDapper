@@ -36,6 +36,13 @@ namespace ApiWithDapper.Controllers
            return await _service.SelectAllProduct();
         }
 
+        [HttpGet]
+        [Route("/SelectAllProductSp")]
+        public async Task<IEnumerable<Mobile>> SelectAllProductSp()
+        {
+            return await _service.SelectAllProductSp();
+        }
+
 
     }
 }

@@ -22,8 +22,9 @@ namespace ApiWithDapper.Service
 
         public async Task<IEnumerable<Mobile>> SelectAllProductSp()
         {
-            var query = "SELECT * FROM Mobile";
-            var result = await _connection.QueryAsync<Mobile>(query);
+            var query = "InsertMobile";
+            var result = await _connection.QueryAsync<Mobile>(query,commandType:CommandType.StoredProcedure);
+
             return result;
         }
 
