@@ -6,5 +6,8 @@ namespace ApiWithDapper.Service
     {
         Task<IEnumerable<Mobile>> SelectAllProduct();
         Task<List<Mobile>> SelectAllProductSp();
+        Task<int> InsertMobile(Mobile model);
+        Task<int> InsertMobileSp(Mobile model);
+        Task<Mobile> InsertMobileSpGet(Mobile model);
     }
 }

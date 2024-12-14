@@ -43,6 +43,27 @@ namespace ApiWithDapper.Controllers
             return await _service.SelectAllProductSp();
         }
 
+        [HttpPost]
+        [Route("/InsertMobile")]
+        public async Task<int> InsertMobile(Mobile model)
+        {
+            return await _service.InsertMobile(model);  
+        }
+
+        [HttpPost]
+        [Route("/InsertMobileSp")]
+        public async Task<int> InsertMobileSp(Mobile model)
+        {
+            return await _service.InsertMobileSp(model);
+        }
+
+        [HttpPost]
+        [Route("/InsertMobileSpGet")]
+        public async Task<Mobile> InsertMobileSpGet(Mobile model)
+        {
+            return await _service.InsertMobileSpGet(model);
+        }
+
 
     }
 }
