@@ -32,10 +32,7 @@ namespace ApiWithDapper.Service
 
             return result;
         }
-        public void Sex(int age)
-        {
 
-        }
         public async Task<int> InsertMobileSp(Mobile model)
         {   //Create Parameters
             var parameters = new DynamicParameters();
